@@ -8,11 +8,10 @@ let numero = 0;
 
 function printwin() {
   let cartel = document.getElementById("cartel");
-  let win = document.getElementById("audioWin");
   cartel.innerHTML = "<H1>GANASTE</H1>";
   cartel.style.color = colores[GetRandomNumber(colores.length - 1)];
   modificarDinero(20);
-  win.play();
+  audioWin.play();
 }
 
 function winGame2() {
@@ -37,7 +36,12 @@ function carga() {
   }
 }
 
-function game2() {
+function game2Play() {
+  if (!checkDinero(usuarioActual, 1)) {
+    mostrarFondosInsuficientes();
+    return;
+  }
+
   modificarDinero(-1);
   document.getElementById("game1").hidden = true;
   document.getElementById("game2").hidden = false;
@@ -48,7 +52,7 @@ function game2() {
   if (document.getElementById("imagenesOcultas").hidden) {
     document.getElementById("imagenesOcultas").hidden = false;
   }
-  document.getElementById("audioGirar").play();
+  audioGirar.play();
   let timmer = window.setInterval(girar, 50);
 
   function girar() {
@@ -56,7 +60,7 @@ function game2() {
     numero++;
     if (numero > 10) {
       window.clearInterval(timmer);
-      document.getElementById("audioGirar").pause();
+      audioGirar.pause();
       numero = 0;
       winGame2();
     }

@@ -10,23 +10,16 @@
 
 <body>
     <div class="estilosVerficacion">
-        <form id="ageForm">
-            <label for="questAge">Ingresa tu edad:</label>
-            <input type="number" id="questAge" required>
-            <button type="button" onclick="verficarEdad()"> Verifica tu Edad</button>
-        </form>
-        <div id="menor">
-
-        </div>
         <form id="ingreso">
-            <label  ></label>
-            <input type="text" id="nombreUsuario" placeholder="ingrese su Nombre" required>
+            <input type="text" id="nombreUsuario" placeholder="Ingrese su Nombre" required>
+            <input type="number" min="0" max="100" id="questAge" placeholder="Ingrese su edad" required>
             <button type="submit">Enviar</button>
         </form>
+        <div id="menor" class="validaciones"></div>
     </div>
 
-    <script src='verificacion.js'></script>
-    
+    <script src="usuario.js"></script>
+    <script src="verificacion.js"></script>
 </body>
 
 </html>

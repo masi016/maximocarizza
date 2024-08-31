@@ -52,13 +52,26 @@ function grabarUsuario() {
 }
 
 function mostrarUsuario() {
-  document.getElementById(
-    "usuario"
-  ).innerHTML = `Hola ${usuarioActual.nombre} tenes ${usuarioActual.dinero}`;
+  usuarioInfo.innerHTML = `Hola ${usuarioActual.nombre} tenes ${usuarioActual.dinero} Maxi Coins`;
+}
+
+function mostrarFondosInsuficientes() {
+  game1.hidden = true;
+  game2.hidden = true;
+  fondos.hidden = false;
+}
+
+function cargarDinero(dinero) {
+  modificarDinero(dinero);
+  fondos.hidden = true;
 }
 
 function modificarDinero(valor) {
   usuarioActual.dinero += valor;
   grabarUsuario();
   mostrarUsuario();
+}
+
+function checkDinero(usuario, dineroMinimo) {
+  return usuario.dinero > dineroMinimo;
 }
