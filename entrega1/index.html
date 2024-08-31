@@ -1,12 +1,57 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <title>Curso js</title>
-  <script src='functions.js'></script>
-</head>
 <body>
-  <h1>Tenes que encontrar el numero que estoy pensando.</h1>
-  <h2>Atencion solo tenes tres intentos para hacerlo!!!</h2>
-  <button onclick="game()">iniciar juego</button>
+  <!--usuario-->
+  <div id="usuario">
+    <div id="usuarioInfo"></div>
+    <!--fondos insuficientes-->
+    <div id="fondos" hidden>
+      <h1>Fondos insuficientes</h1>
+      <button onclick="cargarDinero(10)">Cargar 10 Maxi Coins de regalo</button>
+    </div>
+  </div>
+  <!--menu-->
+  <div id="menugames">
+    <button onclick="game1Play()">Adivina el Numero</button>
+    <button onclick="game2Play()">Traga Monedas</button>
+    <button onclick="logoff()">Cerrar Session</button>
+  </div>
+  <!--juego guestnumber-->
+  <div id="game1" hidden>
+    <div id="consigna">
+    </div>
+    <div id="textoAd"></div>
+    <input type="number" id="numeroInput" min="1" max="10" placeholder="Ingresa aqui tu Numero">
+    <button id="botonJuego">Enviar</button>
+  </div>
+  <!--juego ruleta-->
+  <div id="game2">
+    <div id="imagenesOcultas" hidden class="tragaMonedas">
+      <img id="img1" src="./fotosCasino/limon.png" alt="limon" width="150">
+      <img id="img2" src="./fotosCasino/cereza.png" alt="cereza" width="150">
+      <img id="img3" src="./fotosCasino/siete.png" alt="siete" width="150">
+    </div>
+    <div id="cartel"></div>
+  </div>
+  <!--soniditos fecheritos-->
+  <audio id="audioWin">
+    <source src="sounds/win.wav" type="audio/wav">
+  </audio>
+  <audio id="audioGirar">
+    <source src="sounds/girar.wav" type="audio/wav">
+  </audio>
+  <script src="const.js"></script>
+  <script src='guestNumber.js'></script>
+  <script src='ruleta.js'></script>
+  <script src='colors.js'></script>
+  <script src="usuario.js"></script>
+
+  <script>
+    window.onload = function () {
+      mostrarUsuario();
+    }
+
+    function logoff() {
+      window.location.href = "verficacion.html"
+    }
+  </script>
+
 </body>
-</html>
