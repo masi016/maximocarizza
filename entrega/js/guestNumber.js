@@ -3,14 +3,14 @@ function GetRandomNumber(max) {
 }
 
 function mostrarConsigna() {
+  carousel.hidden = true;
   game2.hidden = true;
   game1.hidden = false;
   advertencia.hidden = true;
   consigna.hidden = false;
   botonJuego.disabled = false;
-  pintar("white");
   consigna.innerHTML =
-    "<h3>Tenes que encontrar el numero que estoy pensando del 1 al 10.</h3><h3>Cuidado, Tenes solo 3 intentos!!</h3>";
+    '<div class="gustNumbStyle"><h3>Tenés que encontrar el número que estoy pensando del 1 al 10.</h3><h3>Cuidado, ¡tenés solo 3 intentos!</h3></div>';
 }
 
 function QuestNumber() {
@@ -20,12 +20,12 @@ function QuestNumber() {
 function CheckNumber(numero, numeroGanador) {
   if (numero > numeroGanador) {
     consigna.innerHTML =
-      "<h3>Tu numero es mas grande que el Numero ganador!</h3>";
+      '<h3 class="gustNumbStyle">Tu numero es mas grande que el Numero ganador!</h3>';
     return false;
   }
   if (numero < numeroGanador) {
     consigna.innerHTML =
-      "<h3>Tu numero es mas chico que el Numero ganador!</h3>";
+      '<h3 class="gustNumbStyle">Tu numero es mas chico que el Numero ganador!</h3>';
     return false;
   }
 
@@ -35,25 +35,20 @@ function CheckNumber(numero, numeroGanador) {
 }
 
 function perdiste(numeroGanador) {
-  pintar("red");
   advertencia.innerHTML =
-    "<h3>PERDISTE</h3>" + `<h2> El numero era ${numeroGanador}</h2>`;
+    '<h3 class="gustNumbStyle">PERDISTE</h3>' +
+    `<h2 class="gustNumbStyle"> El numero era ${numeroGanador}</h2>`;
   consigna.hidden = true;
   botonJuego.disabled = true;
   modificarDinero(-10);
 }
 
 function ganaste() {
-  pintar("green");
-  advertencia.innerHTML = "<H1>GANASTE</H1>";
+  advertencia.innerHTML = '<H1 class="gustNumbStyle" >GANASTE</H1>';
   advertencia.style.color = colores[GetRandomNumber(colores.length - 1)];
   botonJuego.disabled = true;
   modificarDinero(20);
-  audioWin.play();
-}
-
-function pintar(color) {
-  document.body.style.background = color;
+  i_Cant_Stop_Winning.play();
 }
 
 function game1Play() {
@@ -70,7 +65,7 @@ function game1Play() {
   console.log(numeroGanador);
   gano = false;
   cantP = 1;
-  document.getElementById("botonJuego").onclick = function () {
+  botonJuego.onclick = function () {
     numero = QuestNumber();
     gano = CheckNumber(numero, numeroGanador);
     if (gano) {
@@ -85,8 +80,10 @@ function game1Play() {
 
     advertencia.hidden = false;
     advertencia.innerHTML =
-      "<h3>&iexcl;Incorrecto!</h3>" +
-      `<h2>&iexcl;Ten cuidado, te quedan: ${3 - cantP} intentos!</h2>`;
+      '<h3 class="gustNumbStyle" >&iexcl;Incorrecto!</h3>' +
+      `<h2 class="gustNumbStyle" >&iexcl;Ten cuidado, te quedan: ${
+        3 - cantP
+      } intentos!</h2>`;
     cantP++;
     return;
   };

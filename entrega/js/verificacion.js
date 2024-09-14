@@ -1,9 +1,26 @@
+let intentos = 0;
+var nombre = document.getElementById("nombreUsuario");
+var edad = document.getElementById("questAge");
+
+function intentosEdad() {
+  if (intentos >= 3) {
+    Swal.fire({
+      icon: "error",
+      title: "Demasiados intentos",
+      text: "No cumplís con la mayoría de edad, acceso denegado.",
+    }).then(() => {
+      window.location.href = "index.html";
+    });
+    return true;
+  }
+  return false;
+}
+
 function validarEdad() {
   Swal.fire({
-    title: "cuantos años tenes?",
+    title: "¿Cuántos años tenés?",
     icon: "question",
     input: "range",
-    inputLabel: "cuantos años tenes?",
     inputAttributes: {
       min: "8",
       max: "120",
@@ -12,14 +29,30 @@ function validarEdad() {
     inputValue: 18,
   }).then((result) => {
     if (result.value < 18) {
-      Swal.fire({
-        icon: "error",
-        title: "Oops...",
-        text: "No cumplis con la mayoria de edad!",
-      }).then((result) => {
-        validarEdad();
-      });
+      intentos++;
+      if (!intentosEdad()) {
+        Swal.fire({
+          icon: "error",
+          title: "Oops...",
+          text: "¡No cumplís con la mayoría de edad!",
+        }).then(() => {
+          try_Again.volume = 0.2;
+          try_Again.play();
+          validarEdad();
+        });
+      }
+    } else {
+      edad.value = result.value;
+      lestGoGamble.play();
     }
-    document.getElementById("questAge").value = result.value;
   });
+}
+
+function enviarForm() {
+  if (edad.value === "undefined" || edad.value < 18) {
+    validarEdad();
+    return false;
+  }
+  crearUsuario(nombre.value, 150, edad.value);
+  return true;
 }

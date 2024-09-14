@@ -5,26 +5,34 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mi casino js </title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" href="fotosCasino/icono.jpg" type="image/jpg">
 </head>
 
 <body>
     <div class="estilosVerficacion">
-        <form id="ingreso">
+        <h1>Bienviendo a Maxi Casino</h1>
+        <form id="ingreso" action="juegos.html" onsubmit="return enviarForm()">
             <input type="text" id="nombreUsuario" placeholder="Ingrese su Nombre" required>
             <input type="hidden" id="questAge">
-            <button type="submit">Enviar</button>
+            <button type="submit" class="buttonInicioSession">Enviar</button>
         </form>
         <div id="menor" class="validaciones"></div>
     </div>
 
+    <audio id="lestGoGamble">
+        <source src="sounds/Lest_Go_Gamble.wav" type="audio/wav">
+    </audio>
+    <audio id="try_Again">
+        <source src="sounds/try_Again.wav" type="audio/wav">
+    </audio>
     <script src="js/usuario.js"></script>
     <script src="js/verificacion.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
     <script>
         window.onload = function () {
-            validarEdad()
+            validarEdad();
         }
     </script>
 </body>

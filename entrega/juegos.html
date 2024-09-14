@@ -1,8 +1,15 @@
+<head>
+  <title>Mi casino</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/ruleta.css">
+  <link rel="icon" href="fotosCasino/icono.jpg" type="image/jpg">
+</head>
+
 <body>
-  <!--Entrega final nuevo cambio-->
   <!--usuario-->
   <div id="usuario">
-    <div id="usuarioInfo"></div>
+    <div id="usuarioInfo" class="estilosDelUsuario"></div>
     <!--fondos insuficientes-->
     <div id="fondos" hidden>
       <h1>Fondos insuficientes</h1>
@@ -11,26 +18,53 @@
   </div>
   <!--menu-->
   <div id="menugames">
-    <button onclick="game1Play()">Adivina el Numero</button>
-    <button onclick="game2Play()">Traga Monedas</button>
-    <button onclick="logoff()">Cerrar Session</button>
+    <button class="boton" onclick="volver()">volver</button>
+    <button class="boton" onclick="logoff()">Cerrar Session</button>
   </div>
+
+
+  <!--carrusel-->
+  <!-- Slider main container -->
+  <div id="carousel">
+    <div class="swiper">
+      <!-- Additional required wrapper -->
+      <div class="swiper-wrapper">
+        <!-- Slides -->
+        <div class="swiper-slide"><img src="fotosCasino/tragamonedas.jpg" alt="tragaMonedas" onclick="game2Play()">
+        </div>
+        <div class="swiper-slide"><img src="fotosCasino/guestNumber.jpg" alt="guestNumber" onclick="game1Play()"></div>
+        ...
+      </div>
+      <!-- If we need pagination -->
+      <div class="swiper-pagination"></div>
+
+      <!-- If we need navigation buttons -->
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-button-next"></div>
+
+      <!-- If we need scrollbar -->
+      <div class="swiper-scrollbar"></div>
+    </div>
+  </div>
+
   <!--juego guestnumber-->
   <div id="game1" hidden>
     <div id="consigna">
     </div>
     <div id="textoAd"></div>
-    <input type="number" id="numeroInput" min="1" max="10" placeholder="Ingresa aqui tu Numero">
-    <button id="botonJuego">Enviar</button>
+    <input type="number" id="numeroInput" min="1" max="10" class="estilosVerficacion"
+      placeholder="Ingresa aqui tu Numero">
+    <button id="botonJuego" class="botonGuestNumber">Enviar</button>
   </div>
   <!--juego ruleta-->
-  <div id="game2">
+  <div id="game2" class="gameCanvan" hidden>
+    <div id="cartel" class="cartelRuleta">Suerte</div>
     <div id="imagenesOcultas" hidden class="tragaMonedas">
-      <img id="img1" src="maximocarizza\entrega\fotosCasino/limon.png" alt="limon" width="150">
-      <img id="img2" src="maximocarizza\entrega\fotosCasino\cereza.png" alt="cereza" width="150">
-      <img id="img3" src="maximocarizza\entrega\fotosCasino/siete.png" alt="siete" width="150">
+      <img id="img1" src="fotosCasino/limon.png" alt="limon" width="150">
+      <img id="img2" src="fotosCasino/cereza.png" alt="cereza" width="150">
+      <img id="img3" src="fotosCasino/siete.png" alt="siete" width="150">
     </div>
-    <div id="cartel"></div>
+    <button class="button-guess" onclick="game2Play()">Girar</button>
   </div>
   <!--soniditos fecheritos-->
   <audio id="audioWin">
@@ -39,18 +73,32 @@
   <audio id="audioGirar">
     <source src="sounds/girar.wav" type="audio/wav">
   </audio>
+  <audio id="oh_Dang_It">
+    <source src="sounds/oh_Dang_It.wav" type="audio/wav">
+  </audio>
+  <audio id="i_Cant_Stop_Winning">
+    <source src="sounds/i_Cant_Stop_Winning.wav" type="audio/wav">
+  </audio>
+  <!--scripts-->
   <script src="js/const.js"></script>
   <script src='js/guestNumber.js'></script>
   <script src='js/ruleta.js'></script>
   <script src='js/colors.js'></script>
   <script src="js/usuario.js"></script>
+  <script src="js/carousel.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
   <script>
     window.onload = function () {
+      CreateCarousel();
       mostrarUsuario();
     }
 
+    function volver() {
+      game1.hidden = true;
+      game2.hidden = true;
+      carousel.hidden = false;
+    }
     function logoff() {
       window.location.href = "index.html"
     }
