@@ -1,0 +1,175 @@
+img {
+    display: block;
+    max-width: 100%;
+    height: auto; 
+}
+body {
+    background-color: #000000ca; 
+    color: #ffffff;
+    font-family: 'Arial', sans-serif; 
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    background-image: linear-gradient(45deg, #4b0082, #8a2be2); 
+    background-size: cover; 
+}
+
+.boton{
+    background-color: #5a064ad1; 
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.2rem;
+    transition: background-color 0.10s ease;
+   }
+button:hover {
+   background-color: #7b1fa2; }
+
+   #menugames {
+    position: absolute;
+    top: 20px; 
+    right: 20px;
+    display: flex; /* Usa flexbox para la disposición */
+    flex-direction: column; /* Coloca los botones en una columna */
+    gap: 10px; /* Espacio entre los botones */
+}
+
+
+.estilosDelUsuario {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    background-color: rgba(75, 0, 130, 0.8);
+    color: #d6d43a;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-size: 1.2rem;
+    font-family: 'Arial', sans-serif;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+.estilosDelUsuario span {
+    font-weight: bold;
+}
+
+.textoPrincipal{
+    text-align: center;
+}
+
+.estilosVerficacion {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 80%; 
+    max-width: 600px; 
+    margin: 0 auto; 
+}
+.estilosVerficacion input[type="text"] {
+    background-color: #333; 
+    color: #f0e68c; 
+    border: 2px solid #6a1b9a; 
+    border-radius: 10px; 
+    padding: 8px 12px; 
+    font-size: 1rem; 
+    font-family: 'Arial', sans-serif; 
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5); 
+    outline: none; 
+    width: 100%; 
+    max-width: 300px; 
+    box-sizing: border-box; 
+    margin: 0 auto; 
+}
+.estilosVerficacion input[type="text"]::placeholder {
+    color: #888; 
+    font-style: italic; 
+    padding-left: 10px;
+}
+
+.validaciones{
+    text-align: center;
+    font-size:xx-small
+}
+
+.swiper {
+    width: 50%;
+    height: 500px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    background-position: center;
+    margin: 0 auto;
+    display: flex;
+}
+
+.swiper-slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.gustNumbStyle{
+    text-align: center;
+    color: #ffffff;
+    font-family: 'Arial', sans-serif; 
+    margin: 0;
+    padding: 0;
+    background-image: linear-gradient(45deg, #4b0082, #8a2be2); 
+    background-size: cover; 
+}
+.gameCanvan{
+    position: absolute; 
+    top: 10%;
+    left: 25%; 
+  }
+
+.buttonInicioSession {
+  background-color: #8a2be2; 
+  color: white; 
+  border: none;
+  padding: 12px 20px; 
+  border-radius: 10px; 
+  cursor: pointer; 
+  font-size: 1.2rem; 
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6); 
+  transition: background-color 0.3s ease; 
+}
+
+.botonGuestNumber {
+    position: fixed; /* Fija el botón en una posición específica en la pantalla */
+    bottom: 20px; /* Espaciado desde la parte inferior de la pantalla */
+    left: 50%; /* Posiciona el botón en el centro horizontalmente */
+    transform: translateX(-50%); /* Ajusta el botón a la izquierda por su mitad para centrarlo */
+    background-color: #ff5722; /* Fondo naranja brillante */
+    color: #ffffff; /* Texto en blanco para buen contraste */
+    border: 2px solid #ff5722; /* Borde del mismo color que el fondo */
+    border-radius: 12px; /* Bordes redondeados */
+    padding: 10px 18px; /* Espaciado interno del botón */
+    font-size: 1.1rem; /* Tamaño de la fuente del botón */
+    font-family: 'Arial', sans-serif; /* Fuente clara y legible */
+    cursor: pointer; /* Cambio del cursor al pasar sobre el botón */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.4); /* Sombra para un efecto tridimensional más fuerte */
+    transition: background-color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease; /* Transición suave para el color de fondo, borde y sombra */
+    width: auto; /* Ancho automático del botón */
+    max-width: 300px; /* Ancho máximo del botón */
+  }
+  
+.botonGuestNumber:hover {
+    background-color: #e64a19; /* Color de fondo más oscuro al pasar el cursor */
+    border-color: #e64a19; /* Color del borde más oscuro al pasar el cursor */
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.6); /* Sombra más pronunciada al pasar el cursor */
+}
+.botonGuestNumber:focus {
+    outline: none; /* Quita el borde azul predeterminado cuando se enfoca */
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.8); /* Sombra más pronunciada al enfocar */
+  }
+  
+.gustNumbStyle{
+    text-align: center; /* Centra el texto horizontalmente */
+    margin: 0; /* Elimina los márgenes por defecto */
+    padding: 0; /* Elimina el padding por defecto */
+    color: white; /* Color del texto, puedes cambiarlo */
+    font-family: Arial, sans-serif; /* Fuente del texto */
+    font-size: 24px; /* Tamaño de la fuente */
+}
+
+

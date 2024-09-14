@@ -1,0 +1,71 @@
+.tragamonedas{
+    display: flex; /* Usa flexbox para alinear los elementos en fila */
+    justify-content: center; /* Centra las imágenes horizontalmente */
+    align-items: center; /* Alinea las imágenes verticalmente al centro */
+    gap: 10px; /* Espacio entre las imágenes */
+    width: 100%; /* Asegura que el contenedor ocupe todo el ancho de la pantalla */
+}
+#game2 {
+    background-color: #1b0033; /* Fondo oscuro para la máquina */
+    border: 5px solid #8a2be2; /* Bordes violetas brillantes */
+    width: 60%;
+    margin: 0 auto;
+    padding: 20px;
+    border-radius: 15px; /* Bordes redondeados para un efecto de máquina */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.8); /* Sombra para un efecto tridimensional */
+    text-align: center;
+  }
+  
+  #imagenesOcultas {
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* Espacio entre los rodillos */
+    background-color: #222; /* Fondo oscuro para las imágenes, simulando la ventana de la máquina */
+    border: 3px solid #f0e68c; /* Bordes dorados alrededor de los rodillos */
+    border-radius: 10px;
+    box-shadow: inset 0 0 10px rgba(255, 255, 255, 0.2); /* Sombra interna para dar profundidad */
+  }
+  
+  #imagenesOcultas img {
+    background-color: white;
+    width: 120px; /* Tamaño de las imágenes */
+    height: auto;
+    border-radius: 10px; /* Bordes redondeados en las imágenes */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6); /* Sombra para hacer que las imágenes parezcan sobresalir */
+  }
+  
+  
+  .cartelRuleta {
+    margin-top: 20px;
+    font-size: 1.5rem;
+    color: #f0e68c; /* Texto dorado */
+    font-family: 'Arial', sans-serif;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+    height: 60px; /* Altura fija del cartel */
+    line-height: 1.2; /* Ajusta el espaciado entre líneas */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden; /* Oculta el contenido que sobrepasa la altura establecida */
+    background-color: #222; /* Fondo oscuro para que el texto destaque */
+    border: 2px solid #f0e68c; /* Borde dorado para encuadrar el cartel */
+    border-radius: 10px; /* Bordes redondeados para estilo */
+  }
+  
+  .button-guess {
+    background-color: #8a2be2;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.2rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    transition: background-color 0.3s ease;
+    margin-top: 20px;
+  }
+  
+  .button-guess:hover {
+    background-color: #7b1fa2;
+  }
+  

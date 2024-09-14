@@ -9,10 +9,6 @@ class Usuario {
   }
 }
 
-function validarEdad(edad) {
-  return edad >= 18;
-}
-
 function crearUsuario(nombre, dinero, edad) {
   let usuario = leerUsuario(nombre);
 
@@ -36,7 +32,6 @@ function leerUsuario(nombre) {
       return usuario;
     }
   }
-
   return null;
 }
 
@@ -52,7 +47,7 @@ function grabarUsuario() {
 }
 
 function mostrarUsuario() {
-  usuarioInfo.innerHTML = `Hola ${usuarioActual.nombre} tenes ${usuarioActual.dinero} Maxi Coins`;
+  usuarioInfo.innerHTML = `Hola ${usuarioActual.nombre}, tenés ${usuarioActual.dinero}  Coins`;
 }
 
 function mostrarFondosInsuficientes() {

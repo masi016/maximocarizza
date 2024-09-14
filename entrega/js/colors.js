@@ -9,4 +9,5 @@ const colores = [
   "darkblue",
   "lime",
   "hotpink",
+  "gold",
 ];
